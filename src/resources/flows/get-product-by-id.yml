@@ -1,0 +1,17 @@
+flow:
+  id: 'get-product-by-id'
+  description: 'Returns a single product by item_id, or redirects to /api/products if not found'
+  ttl: 10s
+
+first.task: 'v1.get.product.by.id'
+
+tasks:
+  - input:
+      - 'input.path_parameter.id -> header.id'
+    process: 'v1.get.product.by.id'
+    output:
+      - 'result -> output.body'
+      - 'status -> output.status'
+      - 'header.location -> output.header.location'
+    description: 'Find product by item_id. Returns 200 with product or 302 redirect to /api/products'
+    execution: end

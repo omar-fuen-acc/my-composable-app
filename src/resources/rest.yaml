@@ -13,13 +13,27 @@ rest:
     timeout: 10s
     tracing: true
 
+  - service: "http.flow.adapter"
+    methods: ['GET']
+    url: "/api/product/{id}"
+    flow: 'get-product-by-id'
+    timeout: 10s
+    tracing: true
+
+  - service: "http.flow.adapter"
+    methods: ['POST']
+    url: "/api/addToCart"
+    flow: 'add-to-cart'
+    timeout: 10s
+    tracing: true
+
 cors:
   - id: cors_1
     options:
       - "Access-Control-Allow-Origin: *"
-      - "Access-Control-Allow-Methods: GET, OPTIONS"
+      - "Access-Control-Allow-Methods: GET, POST, OPTIONS"
       - "Access-Control-Allow-Headers: Origin, Content-Type"
     headers:
       - "Access-Control-Allow-Origin: *"
-      - "Access-Control-Allow-Methods: GET, OPTIONS"
+      - "Access-Control-Allow-Methods: GET, POST, OPTIONS"
       - "Access-Control-Allow-Headers: Origin, Content-Type"

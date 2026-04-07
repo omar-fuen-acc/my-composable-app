@@ -1,5 +1,7 @@
 flows:
   - 'hello-world.yml'
   - 'get-products.yml'
+  - 'get-product-by-id.yml'
+  - 'add-to-cart.yml'
 
 location: 'classpath:/flows/'

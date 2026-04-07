@@ -1,0 +1,15 @@
+flow:
+  id: 'add-to-cart'
+  description: 'Validates the request body, matches item IDs to products, and updates the shopping cart for the given user'
+  ttl: 10s
+
+first.task: 'v1.add.to.cart'
+
+tasks:
+  - input:
+      - 'input.body -> body'
+    process: 'v1.add.to.cart'
+    output:
+      - 'result -> output.body'
+    description: 'Validate body, match products, persist and return the updated shopping cart'
+    execution: end
