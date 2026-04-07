@@ -18,12 +18,19 @@ function copyFolder(src, target) {
 }
 
 const base = getCurrentFolder();
+
 const src = `${base}src/resources`;
 const target = `${base}dist/resources`;
-
 if (fs.existsSync(src)) {
     copyFolder(src, target);
     console.log('Resources copied to dist/');
 } else {
     console.error('ERROR: src/resources folder not found');
+}
+
+const mockSrc = `${base}src/mock`;
+const mockTarget = `${base}dist/mock`;
+if (fs.existsSync(mockSrc)) {
+    copyFolder(mockSrc, mockTarget);
+    console.log('Mock data copied to dist/');
 }

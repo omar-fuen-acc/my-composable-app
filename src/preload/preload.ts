@@ -2,6 +2,7 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { Logger, AppConfig, Platform, RestAutomation, EventScriptEngine } from 'mercury-composable';
 import { HelloWorld } from '../functions/hello-world.js';
+import { GetProducts } from '../functions/get-products.js';
 
 const log = Logger.getInstance();
 
@@ -26,8 +27,8 @@ export class ComposableLoader {
                 const config = AppConfig.getInstance(resourcePath);
                 const platform = Platform.getInstance();
 
-                // Register the HelloWorld composable function
                 platform.register('v1.hello.world', new HelloWorld(), 5);
+                platform.register('v1.get.products', new GetProducts(), 5);
 
                 await new EventScriptEngine().start();
                 if ('true' == config.getProperty('rest.automation')) {

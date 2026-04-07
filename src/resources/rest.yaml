@@ -6,6 +6,13 @@ rest:
     timeout: 10s
     tracing: true
 
+  - service: "http.flow.adapter"
+    methods: ['GET']
+    url: "/api/products"
+    flow: 'get-products'
+    timeout: 10s
+    tracing: true
+
 cors:
   - id: cors_1
     options:

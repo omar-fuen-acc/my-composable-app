@@ -1,4 +1,5 @@
 flows:
   - 'hello-world.yml'
+  - 'get-products.yml'
 
 location: 'classpath:/flows/'
