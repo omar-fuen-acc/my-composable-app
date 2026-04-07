@@ -1,0 +1,14 @@
+flow:
+  id: 'hello-world'
+  description: 'Returns a Hello World greeting'
+  ttl: 10s
+
+first.task: 'v1.hello.world'
+
+tasks:
+  - input: []
+    process: 'v1.hello.world'
+    output:
+      - 'result -> output.body'
+    description: 'Call HelloWorld function and return result as response body'
+    execution: end

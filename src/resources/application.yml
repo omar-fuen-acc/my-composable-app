@@ -1,0 +1,14 @@
+application.name: 'my-composable-app'
+info.app:
+  version: '1.0.0'
+  description: 'Hello World app using Mercury Composable'
+
+server.port: 8086
+
+log:
+  format: text
+  level: INFO
+
+rest.automation: true
+yaml.rest.automation: classpath:/rest.yaml
+yaml.flow.automation: classpath:/flows.yaml
