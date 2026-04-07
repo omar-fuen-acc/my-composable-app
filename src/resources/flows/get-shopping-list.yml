@@ -1,0 +1,15 @@
+flow:
+  id: 'get-shopping-list'
+  description: 'Returns the shopping cart for a given user_id from the query params'
+  ttl: 10s
+
+first.task: 'v1.get.shopping.list'
+
+tasks:
+  - input:
+      - 'input.query.user_id -> header.user_id'
+    process: 'v1.get.shopping.list'
+    output:
+      - 'result -> output.body'
+    description: 'Find and return the shopping cart matching the user_id'
+    execution: end

@@ -5,6 +5,7 @@ import { HelloWorld } from '../functions/hello-world.js';
 import { GetProducts } from '../functions/get-products.js';
 import { GetProductById } from '../functions/get-product-by-id.js';
 import { AddToCart } from '../functions/add-to-cart.js';
+import { GetShoppingList } from '../functions/get-shopping-list.js';
 
 const log = Logger.getInstance();
 
@@ -33,6 +34,7 @@ export class ComposableLoader {
                 platform.register('v1.get.products', new GetProducts(), 5);
                 platform.register('v1.get.product.by.id', new GetProductById(), 5);
                 platform.register('v1.add.to.cart', new AddToCart(), 5);
+                platform.register('v1.get.shopping.list', new GetShoppingList(), 5);
 
                 await new EventScriptEngine().start();
                 if ('true' == config.getProperty('rest.automation')) {

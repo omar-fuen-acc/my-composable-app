@@ -27,6 +27,13 @@ rest:
     timeout: 10s
     tracing: true
 
+  - service: "http.flow.adapter"
+    methods: ['GET']
+    url: "/api/shoppingList"
+    flow: 'get-shopping-list'
+    timeout: 10s
+    tracing: true
+
 cors:
   - id: cors_1
     options:

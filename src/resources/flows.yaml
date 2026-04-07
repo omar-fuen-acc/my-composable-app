@@ -3,5 +3,6 @@ flows:
   - 'get-products.yml'
   - 'get-product-by-id.yml'
   - 'add-to-cart.yml'
+  - 'get-shopping-list.yml'
 
 location: 'classpath:/flows/'
